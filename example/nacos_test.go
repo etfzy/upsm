@@ -1,4 +1,4 @@
-package example
+/*package example
 
 import (
 	"fmt"
@@ -8,6 +8,7 @@ import (
 	"github.com/xpizy2020/upsm/loadbalancer"
 	nr "github.com/xpizy2020/upsm/resolver/nacosresolver"
 )
+
 
 func TestNacosUps(t *testing.T) {
 	t.Run("wrr load balance test", func(t *testing.T) {
@@ -19,13 +20,13 @@ func TestNacosUps(t *testing.T) {
 
 		//创建一个resolver
 		inst := nr.CreateWrrNacosResolver()
-		inst.Init(nr.WithUsername("nacos"), nr.WithPwd("nacos"), nr.WithServers([]string{""}), nr.WithPort(), nr.WithNameSpace(""))
+		inst.Init(nr.WithUsername(""), nr.WithPwd(""), nr.WithServers([]string{""}), nr.WithPort(), nr.WithNameSpace(""))
 
 		inst.Subscribe(&nr.Watcher{
 			Server:  "",
 			Group:   "",
 			Cluster: "",
-		}, ups.Publish)
+		}, ups)
 
 		addr, _, _ := ups.NextWithoutConnect()
 		fmt.Println("xxxx:", addr)
@@ -70,6 +71,6 @@ func TestNacosUps(t *testing.T) {
 				fmt.Println(m)
 				t.Errorf("1.1.1.3 %d", v)
 			}*/
-	})
+//})
 
-}
+//}

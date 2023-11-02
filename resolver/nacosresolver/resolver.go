@@ -68,7 +68,7 @@ func (c *NacosResolver) Init(optFns ...interface{}) error {
 	return nil
 }
 
-func (c *NacosResolver) Subscribe(key interface{}, publish upstreams.Publish) error {
+func (c *NacosResolver) Subscribe(key interface{}, ups upstreams.Upstreams) error {
 
 	conf := key.(*Watcher)
 	err := c.nacosClient.Subscribe(&vo.SubscribeParam{
@@ -93,7 +93,7 @@ func (c *NacosResolver) Subscribe(key interface{}, publish upstreams.Publish) er
 				nodes = append(nodes, temp)
 			}
 
-			publish(nodes)
+			ups.Publish(nodes)
 		},
 	})
 
