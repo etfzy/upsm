@@ -1,4 +1,4 @@
-module github.com/xpizy2020/upsm
+module github.com/etfzy/upsm
 
 go 1.20
 
